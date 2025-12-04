@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { error } from 'console';
 
 test.beforeEach(async({page}) => {
     await page.goto('https://www.saucedemo.com/');
@@ -69,3 +70,7 @@ test('Verify login with password case sensitivity', async({page})=>{
     await expect(page.locator('[data-test="error"]')).toBeVisible();
     await expect(page.locator('[data-test="error"]')).toContainText('Epic sadface: Username and password do not match any user in this service');
 })
+
+// test(' visual test', async({page})=>{
+//     await expect(page).toHaveScreenshot('errorscreenshot.png');
+// });
